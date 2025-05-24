@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U12 Netball Quick Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-content {
+            display: none;
+        }
+        .section-content.active {
+            display: block;
+        }
+        .nav-button.active {
+            background-color: #4F46E5; /* indigo-600 */
+            color: white;
+        }
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .position-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .position-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+         /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 50; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; /* 10% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%; /* Could be more or less, depending on screen size */
+            max-width: 600px;
+            border-radius: 0.5rem; /* 8px */
+            position: relative;
+        }
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .modal-close:hover,
+        .modal-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <header class="bg-indigo-600 text-white p-4 sm:p-6 shadow-md sticky top-0 z-40">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-0">U12 Netball Quick Guide</h1>
+            <p class="text-sm sm:text-base text-indigo-200">Redlands Netball Association Focus</p>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-sm sticky top-[72px] sm:top-[88px] z-30 py-2 px-1">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center gap-1 sm:gap-2">
+                <button onclick="showSection('specifications', this)" class="nav-button text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-md hover:bg-indigo-500 hover:text-white transition-colors duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-400 active">Game Specs</button>
+                <button onclick="showSection('positions', this)" class="nav-button text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-md hover:bg-indigo-500 hover:text-white transition-colors duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-400">Positions</button>
+                <button onclick="showSection('rules', this)" class="nav-button text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-md hover:bg-indigo-500 hover:text-white transition-colors duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-400">Key Rules</button>
+                <button onclick="showSection('signals', this)" class="nav-button text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-md hover:bg-indigo-500 hover:text-white transition-colors duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-400">Umpire Signals</button>
+                <button onclick="showSection('spirit', this)" class="nav-button text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-md hover:bg-indigo-500 hover:text-white transition-colors duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-400">Spirit of Game</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4 sm:p-6">
+        <section id="specifications" class="section-content active mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-indigo-700 border-b-2 border-indigo-200 pb-2">Key Game Specifications (U12)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-2">Ball Size</h3>
+                    <p class="text-slate-700"><strong>Size 5</strong> - This is the full-size netball used for players aged 10 and over.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-2">Goal Post Height</h3>
+                    <p class="text-slate-700"><strong>3.05 metres (10 feet)</strong> - Standard regulation height for players aged 11 and over.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-2">Match Duration</h3>
+                    <p class="text-slate-700">Likely <strong>4 x 8-minute</strong> or <strong>4 x 10-minute quarters</strong>. (Refer to RNA Competitions Manual for specifics). Breaks: 2 mins (1st/3rd Q), 4 mins (half-time).</p>
+                </div>
+            </div>
+             <div class="bg-white p-4 mt-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-lg font-semibold text-indigo-600 mb-2">Team Composition</h3>
+                <p class="text-slate-700"><strong>Seven players</strong> on court. Squads typically up to twelve players.</p>
+            </div>
+        </section>
+
+        <section id="positions" class="section-content mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-indigo-700 border-b-2 border-indigo-200 pb-2">Player Positions</h2>
+            <p class="mb-4 text-slate-600">Click on a position to see more details. U12 players should experience all positions!</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                </div>
+        </section>
+
+        <section id="rules" class="section-content mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-indigo-700 border-b-2 border-indigo-200 pb-2">Key Rules Explained</h2>
+            <div class="space-y-4">
+                </div>
+        </section>
+
+        <section id="signals" class="section-content mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-indigo-700 border-b-2 border-indigo-200 pb-2">Common Umpire Hand Signals</h2>
+            <p class="mb-4 text-slate-600">Visual cues from umpires to clarify decisions. Click on a signal name for a description.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                </div>
+        </section>
+
+        <section id="spirit" class="section-content mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-indigo-700 border-b-2 border-indigo-200 pb-2">Spirit of the Game</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="text-slate-700 mb-3">Netball is built on fair play, respect, and safety. Redlands Netball Association (RNA) emphasizes these through its Codes of Behaviour.</p>
+                <ul class="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                    <li>Treat everyone with respect and courtesy.</li>
+                    <li>Be ethical, fair, considerate, and honest.</li>
+                    <li>Play within the rules and spirit of netball.</li>
+                    <li>Cooperate with everyone involved.</li>
+                    <li>Applaud good play from all teams.</li>
+                    <li>Prioritize child safety and welfare.</li>
+                </ul>
+                <p class="text-slate-700 mb-3"><strong>Focus for U12s:</strong> Skill development, enjoyment, and fair participation are key, aligning with Netball Australia's "Learn to Train" philosophy. Experiencing different positions is encouraged.</p>
+                <p class="text-slate-700 font-semibold">Positive Sideline Culture: Cheer, clap, and encourage all players. Avoid coaching from the sidelines.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 text-center p-4 mt-8">
+        <p class="text-sm">&copy; <span id="currentYear"></span> U12 Netball Quick Guide. For detailed RNA rules, consult official documents.</p>
+    </footer>
+
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle" class="text-xl font-semibold text-indigo-700 mb-3"></h3>
+            <div id="modalBody" class="text-slate-700 space-y-2"></div>
+        </div>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- Data for Positions, Rules, and Signals ---
+        const playerPositions = [
+            { abbr: "GS", name: "Goal Shooter", areas: "Attacking third, goal circle.", roles: "Primary scorer. Works with GA. Receives passes from midcourt." },
+            { abbr: "GA", name: "Goal Attack", areas: "Centre third, attacking third, goal circle.", roles: "Shares scoring with GS. Sets up attacks, feeds GS, brings ball to circle." },
+            { abbr: "WA", name: "Wing Attack", areas: "Centre third, attacking third (NO goal circle).", roles: "Transitions ball to attacking third. Feeds GA/GS. Strong passing needed." },
+            { abbr: "C", name: "Centre", areas: "All three thirds (NO goal circles).", roles: "Links attack & defence. Takes centre pass. High fitness needed." },
+            { abbr: "WD", name: "Wing Defence", areas: "Centre third, defensive third (NO goal circle).", roles: "Defends opposing WA. Intercepts passes, disrupts attack." },
+            { abbr: "GD", name: "Goal Defence", areas: "Centre third, defensive third, goal circle.", roles: "Marks opposing GA. Intercepts, rebounds, helps GK. Transitions ball from defence." },
+            { abbr: "GK", name: "Goal Keeper", areas: "Defensive third, goal circle.", roles: "Last line of defence. Prevents GS/GA scoring. Intercepts, rebounds. Takes defensive throw-ins." }
+        ];
+
+        const keyRules = [
+            { name: "Centre Pass (Start/Restart)", description: "Game starts/restarts after a goal. Teams alternate. Centre has one foot in centre circle. Others in goal thirds until whistle. Ball must be touched/caught in centre third." },
+            { name: "Held Ball", description: "Player must pass or shoot within <strong>3 seconds</strong>. (Shorter than 7-9yrs' 5 secs)." },
+            { name: "Replayed Ball", description: "Cannot bounce to self, or throw in air and re-catch (unless rebound off post or deflection)." },
+            { name: "Footwork (Stepping)", description: "Establish landing foot. Can pivot on it and step with other. Cannot drag/slide landing foot, hop, or reground landing foot after lifting before release. Results in a free pass." },
+            { name: "Offside", description: "Player enters an area not for their position (with or without ball). Results in a free pass." },
+            { name: "Over a Third", description: "Ball cannot be thrown over a complete third without being touched/caught by a player in that third. Results in a free pass." },
+            { name: "Obstruction", description: "Defender must be <strong>0.9 metres (3 feet)</strong> away from player with ball (measured landing foot to defender's nearer foot). Closer than 7-9yrs' 1.2m. No intercept attempts or intimidation if too close." },
+            { name: "Contact", description: "No physical contact that unfairly interferes (pushing, tripping, holding, etc.). Safety first! Results in a penalty pass/shot." },
+            { name: "Scoring a Goal", description: "Only GS or GA can score. Must be entirely within goal circle when receiving ball and before shooting. Ball must pass completely through ring." },
+            { name: "Substitutions", description: "During intervals, injury/illness. Tactical changes (after goal, request umpire) or Rolling Subs may apply (check RNA manual)." },
+            { name: "Throw-in", description: "Ball out of court. Opponent of last toucher takes throw-in from where ball crossed line." },
+            { name: "Free Pass", description: "For minor infringements (stepping, offside, held ball, over a third). Taken where infringement occurred. Infringer doesn't stand out." },
+            { name: "Penalty Pass/Shot", description: "For major infringements (contact, obstruction). Infringer stands beside & away, no moving/speaking until ball released. If in goal circle, GS/GA can pass or shoot." },
+            { name: "Toss Up", description: "Restarts play if two players get ball simultaneously, simultaneous contact, or umpire unsure who touched ball last out of court." }
+        ];
+
+        const umpireSignals = [
+            { name: "Start/Restart Play", description: "Arm held high, angled to goal end of team with centre pass." },
+            { name: "Hold Time", description: "Facing timekeeper, one hand vertical, other horizontal (T-shape)." },
+            { name: "Direction of Pass", description: "Arm outstretched to side, pointing to goal end of team with pass." },
+            { name: "Advantage", description: "Arm sweeps across body towards goal end of team with advantage." },
+            { name: "Goal Scored", description: "Arm held vertically." },
+            { name: "Goal Not Scored", description: "Arms move side to side across each other above waist." },
+            { name: "Footwork", description: "Hands, palms down, move vertically up/down in opposite directions." },
+            { name: "Contact", description: "Hand, palm down, taps opposite forearm." },
+            { name: "Obstruction (player with ball)", description: "Hands, palms inward, held short distance apart." },
+            { name: "Offside / Over a Third", description: "Hand traces a medium upward arc in direction of incorrect area." },
+            { name: "Held Ball", description: "Arm held vertically, three fingers displayed." },
+            { name: "Incorrect Playing (Replayed Ball)", description: "One hand, palm down, moves vertically up/down in bouncing action." }
+        ];
+
+        // --- Modal Functionality ---
+        const modal = document.getElementById('detailsModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        function openModal(title, bodyContent) {
+            modalTitle.textContent = title;
+            modalBody.innerHTML = bodyContent; // Use innerHTML as bodyContent might contain HTML (e.g., <strong>)
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // --- Content Injection ---
+        function populatePositions() {
+            const container = document.querySelector('#positions .grid');
+            container.innerHTML = playerPositions.map(pos => `
+                <div class="bg-white p-4 rounded-lg shadow-md position-card cursor-pointer" onclick="openModal('${pos.abbr} - ${pos.name}', '<p><strong>Allowed Areas:</strong> ${pos.areas}</p><p><strong>Primary Roles:</strong> ${pos.roles}</p>')">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-1">${pos.abbr} - ${pos.name}</h3>
+                    <p class="text-sm text-slate-600 truncate" title="${pos.areas} ${pos.roles}">${pos.areas} ${pos.roles}</p>
+                </div>
+            `).join('');
+        }
+
+        function populateRules() {
+            const container = document.querySelector('#rules .space-y-4');
+            container.innerHTML = keyRules.map(rule => `
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <details>
+                        <summary class="font-semibold text-md text-indigo-600 cursor-pointer hover:text-indigo-800">${rule.name}</summary>
+                        <p class="text-slate-700 mt-2 text-sm">${rule.description}</p>
+                    </details>
+                </div>
+            `).join('');
+        }
+
+        function populateSignals() {
+            const container = document.querySelector('#signals .grid');
+            container.innerHTML = umpireSignals.map(signal => `
+                <div class="bg-white p-4 rounded-lg shadow-md position-card cursor-pointer" onclick="openModal('Signal: ${signal.name}', '<p>${signal.description}</p>')">
+                    <h3 class="text-md font-semibold text-indigo-600 mb-1">${signal.name}</h3>
+                    <p class="text-sm text-slate-600 truncate" title="${signal.description}">${signal.description}</p>
+                </div>
+            `).join('');
+        }
+
+        // --- Section Navigation ---
+        function showSection(sectionId, buttonElement) {
+            // Hide all sections
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Deactivate all nav buttons
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-indigo-600'); // explicit removal of active style
+                btn.classList.remove('text-white');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+            // Activate the clicked button
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            }
+            // Scroll to top of content area for better UX on mobile
+            // Using a slight delay to ensure content is visible before scroll
+            setTimeout(() => {
+                const mainContentTop = document.querySelector('main').offsetTop - 140; // Adjust offset if nav height changes
+                 window.scrollTo({ top: mainContentTop, behavior: 'smooth' });
+            }, 50);
+        }
+
+        // --- Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            populatePositions();
+            populateRules();
+            populateSignals();
+            showSection('specifications', document.querySelector('.nav-button')); // Show first section by default
+        });
+    </script>
+
+</body>
+</html>
+
+
